@@ -1,2 +1,4 @@
-name:b.txt
-add something new here...
+type: txt
+name: b
+content: this is some content.
+this is a new line.
