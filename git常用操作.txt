@@ -8,4 +8,4 @@ git log --pretty=oneline: 更简洁的方式查看版本记录
 git reflog: 查看所有版本
 git reset --hard HEAD^: 回退到上一版本（git reset --hard HEAD^^: 回退到往上第二个版本，以此类推）
 git reset --hard HEAD~100: 回退到往上第100个版本
-git reset --hard 版本号: 前进到指定版本号的版本
+git reset --hard 版本号: 前进或回退到指定版本号的版本
