@@ -1,0 +1,5 @@
+git init: 创建一个仓库
+git add 1.txt: 添加一个文件到暂存区
+git diff 1.txt: 查看1.txt与最新版本的区别
+git commit [1.txt] -m '说明': 提交到分支
+git status : 查看版本库状态
