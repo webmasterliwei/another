@@ -1,7 +1,7 @@
 git init: 创建一个仓库
 git status : 查看版本库状态
 git add 1.txt: 添加一个文件到暂存区
-git commit [1.txt] -m '说明': 提交到分支
+git commit [1.txt] -m '说明': 把文件提交到仓库
 git diff 1.txt: 查看1.txt与最新版本的区别
 git log: 查看版本记录
 git log --pretty=oneline: 更简洁的方式查看版本记录
