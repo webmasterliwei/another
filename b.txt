@@ -4,3 +4,4 @@ time: 2016-09-30 16:02:10
 content: this is some content new.
 this is a new line.
 this is the last line.
+create a new branch is quick.
