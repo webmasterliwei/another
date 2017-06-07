@@ -1,24 +1,112 @@
-git init: 创建一个仓库
-git status : 查看版本库状态
-git add 1.txt: 添加一个文件到暂存区
-git commit [1.txt] -m '说明': 把文件提交到仓库
-git diff [1.txt]: 查看[1.txt]/[所有文件]与最新版本的区别(修改之后还没有暂存起来的变化)
-git diff --staged: 已经暂存起来的文件和上次提交时的快照之间的差异
-git log: 查看版本记录
-git log --pretty=oneline: 更简洁的方式查看版本记录
-git reflog: 查看所有版本
-git reset --hard HEAD^: 回退到上一版本（git reset --hard HEAD^^: 回退到往上第二个版本，以此类推）
-git reset --hard HEAD~100: 回退到往上第100个版本
-git reset --hard 版本号: 前进或回退到指定版本号的版本
+mkdir another
+创建一个名为another的文件夹
+
+cd another
+进入another文件夹
+
+git init
+在another文件夹中创建一个本地仓库
+
+git remote add origin git@github.com:webmasterliwei/another.git
+给本地仓库添加一个远程仓库origin
+
+git fetch origin
+将远程仓库origin的全部更新取回到本地
+
+git checkout master
+本地切换到master分支
+
+git clone git@github.com:webmasterliwei/another.git
+从远程主机克隆一个版本库到本地(等同以上6步)
+
+git remote -v
+查看远程仓库
+
+git remote prune origin
+把远程仓库origin已删除的而本地还存在的分支删除
+
+git remote show origin
+查看远程仓库origin
+
+git branch -r
+列出远程分支
+
+git branch -a
+列出所有分支，包括远程分支和本地分支
+
+git checkout -b newBranch origin/master
+复制远程仓库origin的master分支创建一个名为newBranch的新分支
+
+git push --set-upstream origin newBranch
+将名为newBranch分支推送到远程仓库origin并关联origin的newBranch分支
+
+git status
+查看版本库状态
+
+git pull origin master
+从远程仓库origin的master分支拉取内容到当前分支
+
+git add 1.txt
+添加1.txt到暂存区
+
+git commit [1.txt] -m '说明'
+把文件提交到仓库
+
+git push origin newBranch
+将本地当前分支(newBranch)内容推送到远程仓库origin的newBranch分支上
+
+git checkout master
+本地切换到master分支
+
+git merge newBranch
+将名为名为newBranch的本地分支合并到master本地分支
+
+git push origin master
+将当前分支内容(master)推送到远程仓库origin的master分支上
+
+git branch -d newBranch
+将本地仓库名为newBranch的分支删除
+
+git push origin --delete newBranch
+将远程仓库origin名为newBranch的分支删除
+
+
+git diff [1.txt]
+查看[1.txt]/[所有文件]与最新版本的区别(修改之后还没有暂存起来的变化)
+
+git diff --staged
+已经暂存起来的文件和上次提交时的快照之间的差异
+
+git log
+查看版本记录
+
+git log --pretty=oneline
+更简洁的方式查看版本记录
+
+git reflog
+查看所有版本
+
+git reset --hard HEAD^
+回退到上一版本(git reset --hard HEAD^^: 回退到往上第二个版本,以此类推)
+
+git reset --hard HEAD~100
+回退到往上第100个版本
+
+git reset --hard 版本号
+前进或回退到指定版本号的版本
+
 
 执行git命令时的一些提示：
+
 1.Untracked files:
-    未跟踪的文件意味着Git在之前的快照（提交）中没有这些文件；Git不会自动将之纳入跟踪范围，
-    除非你明明白白地告诉它“我需要跟踪该文件”，因而不用担心把临时文件什么的也归入版本管理。
-2.Changes not staged for commit: 
-    说明已跟踪文件的内容发生了变化，但还没有放到暂存区。
-    要暂存这次更新，需要运行 git add 命令
-    （这是个多功能命令，根据目标文件的状态不同，此命令的效果也不同：
-    可以用它开始跟踪新文件，或者把已跟踪的文件放到暂存区，还能用于合并时把有冲突的文件标记为已解决状态等）。
+    未跟踪的文件意味着Git在之前的快照(提交)中没有这些文件;Git不会自动将之纳入跟踪范围,
+    除非你明明白白地告诉它"我需要跟踪该文件",因而不用担心把临时文件什么的也归入版本管理
+
+2.Changes not staged for commit:
+    说明已跟踪文件的内容发生了变化,但还没有放到暂存区
+    要暂存这次更新,需要运行 git add 命令
+    (这是个多功能命令，根据目标文件的状态不同,此命令的效果也不同:
+    可以用它开始跟踪新文件,或者把已跟踪的文件放到暂存区,还能用于合并时把有冲突的文件标记为已解决状态等)
+
 3.Changes to be committed:
-    已放入暂存区待提交的改变
+    已放入暂存区待提交的改
